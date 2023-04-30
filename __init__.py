@@ -26,7 +26,7 @@ if "bpy" in locals():
 
 import bpy
 from .panels import Strain_Panel
-from .operators import Stain_Calculator
+from .operators import Strain_Calculator
 from .properties import Strain_Panel_Properties
 
 
@@ -36,7 +36,7 @@ properties = (
 
 classes = (
     Strain_Panel,
-    Stain_Calculator,
+    Strain_Calculator,
 )
 
 

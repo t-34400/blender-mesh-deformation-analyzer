@@ -1,5 +1,6 @@
 import bpy
 from ..properties import Strain_Panel_Properties
+from ..operators import Strain_Calculator
 
 
 class Strain_Panel(bpy.types.Panel):
@@ -37,6 +38,5 @@ class Strain_Panel(bpy.types.Panel):
         row.prop(props, Strain_Panel_Properties.target_end_frame_prop_tag, text="")
 
         layout.separator()
-        layout.operator("wm.strain_calculator", text="Calculate strain")
+        layout.operator(Strain_Calculator.bl_idname, text="Calculate strain")
 
-        

@@ -1,1 +1,1 @@
-from .strain_operators import Stain_Calculator
+from .strain_operators import Strain_Calculator
