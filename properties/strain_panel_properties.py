@@ -8,11 +8,15 @@ class Strain_Panel_Properties(bpy.types.PropertyGroup):
     target_start_frame_prop_tag = "target_start_frame_prop"
     target_end_frame_prop_tag = "target_end_frame_prop"
 
+    current_mesh_list = []
+
 
     def get_mesh_list(self, context):
-        return [(obj.name, obj.name, "") for obj in bpy.data.objects if obj.type == 'MESH']
+        current_mesh_list = [(obj.name, obj.name, "") for obj in bpy.data.objects if obj.type == 'MESH']
+        return current_mesh_list
 
 
+    # TODO: fix the bug that update methods does not work correctly
     def update_original_frame_prop(self, context):
         frame_start = bpy.context.scene.frame_start
         frame_end = bpy.context.scene.frame_end
@@ -39,6 +43,7 @@ class Strain_Panel_Properties(bpy.types.PropertyGroup):
             self.target_end_frame_prop = new_value
 
 
+    @classmethod
     def clamp(value, min_value, max_value):
         return max(min_value, min(max_value, value))
 
