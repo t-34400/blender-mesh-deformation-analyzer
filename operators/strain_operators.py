@@ -40,8 +40,8 @@ class Strain_Calculator(bpy.types.Operator):
             context.scene.frame_set(frame_index)
 
             target_vertices = Strain_Calculator.get_vertices(context, depsgraph, target_mesh)
-            target_vertex_count = len(target_vertices.count)
-            if target_vertex_count < original_vertex_count
+            target_vertex_count = len(target_vertices)
+            if target_vertex_count < original_vertex_count:
                 self.report({'ERROR'}, f'The target object at frame {frame_index} has fewer vertices than the original')
                 return {'CANCELLED'}
 
