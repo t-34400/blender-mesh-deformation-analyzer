@@ -28,8 +28,14 @@ def get_strains_of_mesh(original_vertices: List[Vector], target_vertices: List[V
                 angle_list[vertex_index] += angle
                 strain_list[vertex_index] += strain * angle
                            
-    return [strain / angle for strain, angle in zip(strain_list, angle_list)]
-        
+    return [safe_divide(strain, angle) for strain, angle in zip(strain_list, angle_list)]
+
+
+def safe_divide(dividend, divisor):
+    if abs(divisor) < ZERO_DIVISION_THRESHOLD:
+        return 0
+    return dividend / divisor 
+
             
 def get_strain_of_triangle_mesh(original_triangle: List[Vector], target_triangle: List[Vector]) -> float:
     strain_matrix = get_strain_matrix(original_triangle, target_triangle)
