@@ -31,13 +31,20 @@ class Strain_Calculator(bpy.types.Operator):
 
         context.scene.frame_set(props.original_frame_prop)
         original_vertices = Strain_Calculator.get_vertices(context, depsgraph, props.mesh_list_prop)
-        faces = Strain_Calculator.get_faces(context, 'original_plane')
+        faces = Strain_Calculator.get_faces(context, props.mesh_list_prop)
+        original_vertex_count = len(original_vertices)
 
         for frame_index in range(start_frame, end_frame):
+
             wm.progress_update(frame_index)
             context.scene.frame_set(frame_index)
 
             target_vertices = Strain_Calculator.get_vertices(context, depsgraph, target_mesh)
+            target_vertex_count = len(target_vertices.count)
+            if target_vertex_count < original_vertex_count
+                self.report({'ERROR'}, f'The target object at frame {frame_index} has fewer vertices than the original')
+                return {'CANCELLED'}
+
             strains = get_strains_of_mesh(original_vertices, target_vertices, faces)
             vertex_colors = [Strain_Calculator.get_color(strain) for strain in strains]
             
@@ -45,6 +52,7 @@ class Strain_Calculator(bpy.types.Operator):
         
         context.scene.frame_set(current_frame)
         wm.progress_end()
+        self.report({'INFO'}, 'Calculation completed successfully.')
         return {'FINISHED'}
 
 
