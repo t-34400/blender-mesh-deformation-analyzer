@@ -3,8 +3,6 @@
 ![Addon overview](./data/top.jpg)
 
 ## Usage
-<img src="./data/panel.PNG" width="300">
-
 1. プロジェクトファイルをZIPファイルとして保存します.
 2. メニューバーの<code>Edit</code> > <code>Preference</code>をクリックします．表示されたウィンドウの<code>Add-ons</code>タブを選択し， <code>install</code> ボタンを押してZIPファイルを解凍せずに開いてください.
 3. アドオン一覧の<code>Mesh: Mesh Strain Analysis</code>のチェックボックスにチェックしてアドオンを有効化します.
@@ -15,8 +13,10 @@
 8. <code>Calculate strain</code>ボタンをクリックし，計算を行います.
 9. これにより，ターゲットメッシュに歪みのデータを保持する<code>strain_addon_color_layer</code>という名前のカラーアトリビュートが追加されます.
 
-<img src="./data/color_layer.PNG" width="300">
-
+<div style="display: flex; flex-wrap: wrap;">
+    <img src="./data/panel.PNG" height="300">
+    <img src="./data/color_layer.PNG" height="300" style="margin-left: 5px">
+</div>
 ## Demo
 |       |       |
 | :---: | :---: |

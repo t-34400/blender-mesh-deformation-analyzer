@@ -14,8 +14,12 @@ This addon calculates mesh strains based on the original and deformed mesh shape
 8. Press the <code>Calculate strain</code> button to run the calculation.
 9. This will add a color attribute named <code>strain_addon_color_layer</code> to the target mesh, which contains strain data.
 
-<img src="./data/panel.PNG" height="300">
-<img src="./data/color_layer.PNG" height="300">
+<div style="display: flex; flex-wrap: wrap;">
+    <img src="./data/panel.PNG" height="300">
+    <img src="./data/color_layer.PNG" height="300" style="margin-left: 5px">
+</div>
+
+
 
 ## Demo
 |       |       |
