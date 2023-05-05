@@ -18,6 +18,7 @@
     <img src="./data/color_layer.PNG" height="300" style="margin-left: 5px">
 </div>
 ## Demo
+
 |       |       |
 | :---: | :---: |
 | ![Plane demo](./data/plane.gif) | ![Cube demo](./data/cube.gif) |

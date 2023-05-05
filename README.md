@@ -1,6 +1,8 @@
 # Blender-Mesh-Strain-Analyzer Addon
+(→[日本語](./README_JP.md))
+
 This addon calculates mesh strains based on the original and deformed mesh shapes and sets vertex colors accordingly. The strain information can be used for various purposes, such as identifying areas where deformation occurs too much or creating procedural textures based on mesh shapes.
-([日本語](./README_JP.md))
+
 ![Addon overview](./data/top.jpg)
 
 ## Usage
